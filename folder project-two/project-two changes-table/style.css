@@ -8,37 +8,53 @@ body{
 	background-color: #000000;
 }
 .container{
-	width: 1200px;
+	max-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 }
 /* Content styles start */
 .content{
 	padding: 85px 0 60px;
 }
-.title{
+.content-table{
+	overflow-x: auto;
+	min-width: 900px;
+}
+.content h1{
 	font-family: 'Roboto';
 	font-weight: 900;
-	font-size: 80px;
+	font-size: 50px;
 	line-height: 100.32%;
 	text-align: center;
 	text-transform: capitalize;
 	color: #FFFFFF;
 	margin: 0 0 55px;
 }
-table{
-	min-width: 100%;
+@media(min-width:768px){
+	.content h1{
+		font-size: 60px
+	}
 }
-tr, th{
+@media(min-width:992px){
+	.content h1{
+		font-size: 80px
+	}
+}
+.content table{
+	width: 100%;
+}
+.content table tr, .content table td{
 	padding: 30px 15px;
 	border: 15px solid;
 }
- .col{
+.content table td{
 	width: 100%;
 	height: auto;
 	background-color: #121212;
 	position: relative;
+	max-width: calc(100% / 3);
 }
-.col:before{
+.content table td:before{
 	content: "";
 	position: absolute;
 	z-index: 2;
@@ -47,40 +63,47 @@ tr, th{
 	background: rgba(18, 18, 18, 0);
 	transition: .5s ease;
 }
-.col:hover:before{
+.content table td:hover:before{
 	background: rgba(18, 18, 18, 0.8);
 }
-.col:hover .btn{
+.content table td:hover .btn{
 	opacity: 1;
 }
-.col-3{
-	max-width: calc(100% / 3);
-}
-.col h2{
+.content td h2{
 	font-family: 'Roboto';
 	font-weight: 400;
-	font-size: 22px;
+	font-size: 18px;
 	line-height: 100.32%;
 	text-transform: uppercase;
 	color: #FFFFFF;
 	text-align: left;
 	margin: 0 0 30px;
 }
-.col.col-3 p{
+@media(min-width:992px){
+	.content td h2{
+		font-size: 22px;
+	}
+}
+.content td p{
 	font-family: 'Roboto';
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 19px;
 	text-transform: capitalize;
 	color: #FFFFFF;
 	text-align: left;
 	margin: 0 0 30px;
 }
-.col img{
+@media(min-width:992px){
+	.content td p{
+		font-size: 16px
+	}
+}
+.content td img{
 	display: block;
 	width: 100%;
 }
-.btn{
+.content td .btn{
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -100,81 +123,7 @@ tr, th{
 	transition: .5 ease;
 	z-index: 2;
 }
-.btn:hover{
+.content td .btn:hover{
 	background-color: #000000;
 	color: #FFFFFF;
-}
-/* Content styles end */ 
-
-/* adaptive's cod */
-@media (min-width: 480px){
-	.container{
-		width: 380px;
-	}
-}
-@media (min-width: 768px){
-	.container{
-		width: 668px;
-	}
-}
-@media (min-width: 992px){
-	.container{
-		width: 748px;
-	}
-}
-@media (min-width: 1200px){
-	.container{
-		width: 740px;
-	}
-}
-@media (min-width: 1600px){
-	.container{
-		width: 1100px;
-	}
-}
-@media (min-width: 1920px){
-	.container{
-		width: 1200px;
-	}
-}
-@media (max-width: 1200px){
-	.col-3{
-		max-width: calc(100% / 2);
-	}
-}
-@media (max-width: 992px){
-	.col-3{
-		max-width: calc(100% / 2);
-	}
-}
-@media (max-width: 768px){
-	.col{
-		margin: 30px 0 0 0;
-		padding: 25px 15px;
-	}
-	.col-3{
-		max-width: calc(100% / 2);
-	}
-	.col h2{
-		font-size: 19px;
-		margin: 0 0 20px;
-	}
-	.col.col-3 p{
-		font-size: 14px;
-		margin: 0 0 20px;
-	}
-	.btn{
-		width: 140px;
-		height: 45px;
-		font-size: 17px;
-		line-height: 45px;
-	}
-}
-@media (max-width: 480px){
-	.col-3{
-    max-width: 100%;
-	}
-	.title{
-		font-size: 90px;
-	}
 }
